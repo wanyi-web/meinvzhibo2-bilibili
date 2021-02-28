@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="https://sf3-ttcdn-tos.pstatp.com/obj/union-fe-nc/playable/sdk/playable-sdk.js"></script>
+    <!--移动端适配-->
+    <script>
+        var html = document.querySelector('html');
+        changeRem();
+        window.addEventListener('resize', changeRem);
+        // function changeRem(){
+        //     var width = html.getBoundingClientRect().width;
+        //     html.style.fontSize = width / 10 + 'px';
+        // }
+        function changeRem() {
+            var maxwidth = html.getBoundingClientRect().width;
+
+            if (html.getBoundingClientRect().width > html.getBoundingClientRect().height * 750 / 1334)
+
+                maxwidth = html.getBoundingClientRect().height * 750 / 1334;
+
+            html.style.fontSize = maxwidth / 10 + 'px';
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="page">
+            <div class="content">
+                <!-- <div class="logoDiv">
+                    <img src="images/logo.png" alt="" class="logo">
+                </div> -->
+                <div class="app">
+                    <video src="video/movie.mp4" id="video" loop poster="images/bg2.jpg" x5-video-player-fullscreen="false" webview.allowInlineMediaPlayback=YES; x5-video-play-type="h5" webkit-playsinline="false" playsinline="false" style="width: 8.453333rem;" preload="auto"></video>
+
+                    <video preload="auto" src="video/11.mp4" id="videoid" loop poster="images/bg1.jpg" x5-video-player-fullscreen="false" webview.allowInlineMediaPlayback=YES; x5-video-play-type="h5" webkit-playsinline="false" playsinline="false" style="width: 8.453333rem;"></video>
+                    <img src="images/bg1.jpg" alt="" class="di">
+                    <img src="images/zi.png" alt="" class="click">
+                    <img src="images/shou.png" alt="" class="hand">
+                </div>
+                <div class="but">
+                    <img src="images/hudong.png" alt="" id="down1" class="down down1">
+                    <img src="images/more.png" alt="" class="down  down2">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        $("#down1").click(function(e) {
+            console.log("asdasd")
+            e.preventDefault();
+            window.playableSDK.openAppStore();
+        });
+    </script>
+</body>
+
+</html>
